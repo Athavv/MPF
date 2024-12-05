@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiki-Taka-Toe</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tiki-Taka-Toe</h1>
+        <div class="criteria-container">
+            <button id="reset-criteria-btn" onclick="generateCriteria()">Reset Critères</button>
+            <div id="criteria-row" class="criteria-row"></div>
+            <div class="grid-container">
+                <div id="criteria-column" class="criteria-column"></div>
+                <div class="grid">
+                    <div id="case1" class="case" onclick="handleCaseClick(1)"></div>
+                    <div id="case2" class="case" onclick="handleCaseClick(2)"></div>
+                    <div id="case3" class="case" onclick="handleCaseClick(3)"></div>
+                    <div id="case4" class="case" onclick="handleCaseClick(4)"></div>
+                    <div id="case5" class="case" onclick="handleCaseClick(5)"></div>
+                    <div id="case6" class="case" onclick="handleCaseClick(6)"></div>
+                    <div id="case7" class="case" onclick="handleCaseClick(7)"></div>
+                    <div id="case8" class="case" onclick="handleCaseClick(8)"></div>
+                    <div id="case9" class="case" onclick="handleCaseClick(9)"></div>
+                </div>
+            </div>
+        </div>
+        <div id="search-container" class="search-container">
+            <h2>Entrez un joueur :</h2>
+            <input type="text" id="searchBar" placeholder="Nom du joueur..." oninput="filterPlayers()">
+            <ul id="playerSuggestions"></ul>
+            <button onclick="submitPlayer()">Valider</button>
+        </div>
+        <div id="status">Cliquez sur "Démarrer" pour jouer !</div>
+        <button id="start-btn" onclick="startGame()">Démarrer</button>
+        <div id="winner-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2 id="winner-message"></h2>
+                <button onclick="startGame()">Recommencer</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
