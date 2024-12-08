@@ -115,3 +115,4 @@ function switchPlayer() {
     currentPlayer = currentPlayer === 1 ? 2 : 1;
     document.getElementById("status").textContent = `C'est au Joueur ${currentPlayer} de jouer !`;
 }
+
