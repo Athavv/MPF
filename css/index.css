@@ -1,0 +1,103 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+.navbar {
+    background-color: #8BC34A; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 20px; 
+    height: 75px; 
+    gap: 20px; 
+}
+
+
+.custom-button, .custom-button1 {
+    font-size: 1.5rem; 
+    width: 250px; 
+    height: 50px; 
+    background-color: #00FF77; 
+    border: none; 
+    color: black;
+    font-weight: bold; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    margin: 0 200px; 
+}
+
+
+.custom-button:hover, .custom-button1:hover {
+    opacity: 0.9; 
+}
+
+
+body {
+    background-color: #12673D96; 
+}
+
+.terrain {
+    width: 75%;
+    transform:rotate(90deg);
+    border: 50px solid #58D474;
+}
+
+.image-container1 {
+    margin-top: 110px;
+    margin-left:150px;
+}
+
+.m1 {
+    align-items: flex-start;
+    display: flex;
+}
+
+.titrempf {
+    margin-top: 100px;
+    margin-right: 250px;
+    font-size: 10rem;
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:white;
+}
+
+.custom-button2{
+    margin-left: 50px;
+    width:375px;
+    height: 85px;
+    font-size:4rem;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 15px;
+    background-color:black;
+    color: white;
+}
+
+.custom-modal-content {
+    background: url('../ressources/popup.png') no-repeat center center;
+    background-size: cover;
+    color: white; 
+}
+
+.custom-modal-content .modal-body {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-title {
+    font-family: "Jersey 20", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
