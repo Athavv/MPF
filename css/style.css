@@ -112,7 +112,7 @@ h1 {
 
 
 .search-container {
-  position: relative;
+  position: relative; /* Ceci permet de positionner les éléments enfants relativement à ce conteneur */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -145,6 +145,36 @@ h1 {
   background-color: #0056b3;
 }
 
+/* Positionner les suggestions en dessous de la barre de recherche */
+#playerSuggestions {
+  position: absolute;
+  top: 40px;  /* Ajustez cette valeur selon l'espacement que vous souhaitez entre la barre de recherche et les suggestions */
+  right: 10;
+  width: 60%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #58D474;
+  border-radius: 5px;
+  z-index: 10; /* S'assurer que la liste reste au-dessus des autres éléments */
+}
+
+#playerSuggestions li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+#playerSuggestions li:hover {
+  background-color: #58D474;
+  color: white;
+}
+
 
 #status {
   font-size: 1rem;
@@ -163,27 +193,41 @@ button:hover {
   background-color: #0056b3;
 }
 
-#playerSuggestions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #ddd;
-  background-color: white;
-  max-height: 150px;
-  overflow-y: auto;
-  border-radius: 5px;
+#winner-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#playerSuggestions li {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #ddd;
-  background-color: #f8f8f8;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+#winner-popup.hidden {
+  display: none;
 }
 
-#playerSuggestions li:hover {
-  background-color: #007bff;
+#winner-popup img {
+  max-width: 80%;
+  height: auto;
+  margin: 15px 0;
+}
+
+.popup-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #6DA06F;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup-buttons button:hover {
+  background: #5A8C5E;
 }
