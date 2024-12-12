@@ -231,3 +231,34 @@ button:hover {
 .popup-buttons button:hover {
   background: #5A8C5E;
 }
+.criteria-image {
+  width: 80px; /* Largeur des images */
+  height: 80px; /* Hauteur des images */
+  object-fit: cover; /* Ajuste l'image pour qu'elle remplisse sans déformation */
+  margin: 5px; /* Espacement autour des images *//* Bordure légère pour améliorer la lisibilité */
+  border-radius: 5px; /* Coins arrondis pour un style harmonieux */
+}
+
+.criteria-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.case {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-align: center;
+}
+
+.selected {
+  border: 2px solid #00f;
+  background-color: #eef;
+}
+

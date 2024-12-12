@@ -1,6 +1,14 @@
 const criteriaList = {
-    row: ["Vainqueur Ballon d'Or", "A joué en Premier League", "Vainqueur Coupe du Monde"],
-    column: ["Joueur Français", "A joué pour le Real Madrid", "Vainqueur Ligue des Champions"]
+    row: [
+        { text: "Vainqueur Ballon d'Or", image: "https://cdn-icons-png.flaticon.com/512/250/250618.png" },
+        { text: "A joué en Premier League", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/10994321-premier-league-logo-symbole-violet-conception-angleterre-football-vecteur-pays-europeens-equipes-de-football-illustration-avec-fond-blanc-gratuit-vectoriel.jpg" },
+        { text: "Vainqueur Coupe du Monde", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/8785615-trophee-mondial-fifa-coupe-du-monde-logo-champion-symbole-or-design-vecteur-abstrait-illustration-gratuit-vectoriel.jpg" }
+    ],
+    column: [
+        { text: "Joueur Français", image: "https://dekkade.com/1653-tm_thickbox_default/drapeau-france.webp"},
+        { text: "A joué pour le Real Madrid", image: "https://logo-marque.com/wp-content/uploads/2020/11/Real-Madrid-Logo.png"},
+        { text: "Vainqueur Ligue des Champions", image: "https://www.fcbarcelona.com/fcbarcelona/photo/2018/08/20/59ea52bd-1c5f-4988-95f7-b1ecc64916d4/Champions-League.png"},
+    ]
 };
 
 const playerDatabase = [
@@ -10,7 +18,6 @@ const playerDatabase = [
     { name: "Kylian Mbappé", row: ["Vainqueur Coupe du Monde"], column: ["Joueur Français"] },
     { name: "David Beckham", row: ["A joué en Premier League"], column: ["A joué pour le Real Madrid"] }
 ];
-
 
 let currentPlayer = 1;
 let gameActive = false;
@@ -36,13 +43,23 @@ function generateCriteria() {
 
     rows.forEach(crit => {
         const div = document.createElement("div");
-        div.textContent = crit;
+        const img = document.createElement("img");
+        img.src = crit.image;
+        img.alt = crit.text;
+        img.title = crit.text;
+        img.className = "criteria-image"; // Applique la classe CSS
+        div.appendChild(img);
         rowContainer.appendChild(div);
     });
 
     columns.forEach(crit => {
         const div = document.createElement("div");
-        div.textContent = crit;
+        const img = document.createElement("img");
+        img.src = crit.image;
+        img.alt = crit.text;
+        img.title = crit.text;
+        img.className = "criteria-image"; // Applique la classe CSS
+        div.appendChild(img);
         columnContainer.appendChild(div);
     });
 }
@@ -80,7 +97,6 @@ function handleCaseClick(index) {
     document.getElementById(`case${index}`).classList.add("selected");
 }
 
-
 function filterPlayers() {
     const searchQuery = document.getElementById("searchBar").value.toLowerCase();
     const suggestions = document.getElementById("playerSuggestions");
@@ -107,8 +123,8 @@ function submitPlayer() {
     }
 
     const playerName = document.getElementById("searchBar").value.trim();
-    const columnCriteria = document.querySelector(`#criteria-column div:nth-child(${Math.ceil(selectedCell / 3)})`).textContent;
-    const rowCriteria = document.querySelector(`#criteria-row div:nth-child(${((selectedCell - 1) % 3) + 1})`).textContent;
+    const columnCriteria = document.querySelector(`#criteria-column div:nth-child(${Math.ceil(selectedCell / 3)}) img`).alt;
+    const rowCriteria = document.querySelector(`#criteria-row div:nth-child(${((selectedCell - 1) % 3) + 1}) img`).alt;
 
     const isValid = playerDatabase.some(player => {
         return player.name === playerName &&
@@ -133,12 +149,9 @@ function submitPlayer() {
         if (gameActive) switchPlayer();
     } else {
         alert("Joueur invalide ou ne correspond pas aux critères !");
-
-        // Passe au joueur suivant après une erreur
         switchPlayer();
     }
 }
-
 
 function switchPlayer() {
     currentPlayer = currentPlayer === 1 ? 2 : 1;
@@ -163,10 +176,6 @@ function checkWinner() {
             // Configure le pop-up pour une victoire
             document.getElementById("winner-popup").classList.remove("hidden");
             document.getElementById("winner-message").textContent = winnerMessage;
-            document.getElementById("winner-popup").classList.add("victory-popup"); // Ajoute une classe pour styliser le pop-up
-            document.getElementById("winner-image").src = winner === 1 
-                ? "https://upload.wikimedia.org/path/image-bleu.jpg" 
-                : "https://upload.wikimedia.org/path/image-rouge.jpg";
 
             gameActive = false;
             return;
@@ -175,12 +184,8 @@ function checkWinner() {
 
     // Vérifie s'il y a un match nul
     if (!grid.includes(null)) {
-        // Configure le pop-up pour un match nul
         document.getElementById("winner-popup").classList.remove("hidden");
         document.getElementById("winner-message").textContent = "🤝 Match nul ! Aucun gagnant. 🤝";
-        document.getElementById("winner-popup").classList.add("draw-popup"); // Ajoute une classe pour styliser le pop-up
-        document.getElementById("winner-image").src = "./ressources/victoire.jpg";
-
         gameActive = false;
     }
 }

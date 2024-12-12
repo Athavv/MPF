@@ -84,7 +84,7 @@ Créer la base de données pour gérer les informations nécessaires au jeu (jou
 | US6        | Ajouter des interactions simples sur la grille (changement de couleur, clic).  | 1        | La grille réagit aux clics et affiche une animation de base.         | JavaScript           | Terminé |
 
 
-![TrelloSprint1](./trello.png)
+![TrelloSprint1](./ressources/trello.png)
 ---
 
 ### **Sprint 2 : Communication entre le back et le front, tester**
@@ -148,7 +148,8 @@ Tester l’intégration pour valider le bon fonctionnement des différentes inte
 |-- css/                # Styles CSS
 |-- js/                 # Scripts JavaScript
 |-- img/                # Images et icônes
-|-- db/                 # Scripts SQL pour la base de données
+|-- PHP/                # Scripts SQL pour la base de données
+|-- BD/                 # La base de données
 ```
 
 ---
@@ -157,7 +158,7 @@ Tester l’intégration pour valider le bon fonctionnement des différentes inte
 
 Le projet est hébergé sur **Vercel**.
 
-- URL d'accès au site : [https://mpf.alwaysdata.net](#) *(à remplacer par le lien final)*.
+- URL d'accès au site : [https://mpf-self.vercel.app/].
 
 ---
 
