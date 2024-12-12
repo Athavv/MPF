@@ -22,7 +22,7 @@ Le projet a été développé selon la **méthode Scrum**, organisé en deux spr
 
 ### **1. Rôle du chef de projet**
 
-En tant que chef de projet, chaque jour, j’organisais des stand-ups (réunions rapides) avec les membres de l'équipe pour :
+En tant que chef de projet, chaque jour, j’organisais des réunions rapides avec les membres de l'équipe pour :
 
 1. Faire le point sur l’avancement des tâches.
 2. Identifier les priorités du jour.
@@ -70,17 +70,21 @@ Créer la base de données pour gérer les informations nécessaires au jeu (jou
 | US3 | En tant que développeur, je veux concevoir une base de données pour stocker les joueurs et leurs critères.  |
 | US4 | En tant qu’utilisateur, je veux accéder à une page expliquant les règles du jeu.                            |
 | US5 | En tant que développeur, je veux m’assurer que les maquettes sont validées avant le début du développement. |
+| US6 | En tant que développeur, je veux commencer à rendre la grille interactive en JavaScript.                    |
 
 #### **Backlog :**
 
 | User Story | Tâche                                                                          | Priorité | Critère d’acceptation                                                | Conception           | État    |
 | ---------- | ------------------------------------------------------------------------------ | -------- | -------------------------------------------------------------------- | -------------------- | ------- |
-| US1        | Créer une page d’accueil avec les options "Jouer", "Règles", "À propos".       | 1        | La page d’accueil est accessible et fonctionnelle                    | Maquette + Front-end | Terminé |
+| US1        | Créer une page d’accueil avec les options "Jouer", "Règles", "À propos".  | 1        | La page d’accueil est accessible et fonctionnelle                    | Maquette + Front-end | Terminé |
 | US2        | Créer une grille de morpion interactive en HTML/CSS.                           | 1        | La grille est visible, bien alignée, et prête pour les interactions  | Front-end            | Terminé |
 | US3        | Concevoir une base de données pour gérer les joueurs et leurs critères.        | 1        | Une base de données avec les tables nécessaires est définie et prête | SQL + Back-end       | Terminé |
 | US4        | Concevoir une page "Règles" expliquant les bases du jeu et son fonctionnement. | 2        | La page affiche les règles de manière claire et concise              | Maquette + Front-end | Terminé |
 | US5        | Créer des maquettes validées pour l’ensemble des pages principales.            | 1        | Les maquettes respectent les exigences UI/UX et sont approuvées      | Figma                | Terminé |
+| US6        | Ajouter des interactions simples sur la grille (changement de couleur, clic).  | 1        | La grille réagit aux clics et affiche une animation de base.         | JavaScript           | Terminé |
 
+
+![TrelloSprint1](./trello.png)
 ---
 
 ### **Sprint 2 : Communication entre le back et le front, tester**
@@ -151,7 +155,7 @@ Tester l’intégration pour valider le bon fonctionnement des différentes inte
 
 ## **Hébergement**
 
-Le projet est hébergé sur **Alwaysdata**.
+Le projet est hébergé sur **Vercel**.
 
 - URL d'accès au site : [https://mpf.alwaysdata.net](#) *(à remplacer par le lien final)*.
 
@@ -167,4 +171,3 @@ Le projet est hébergé sur **Alwaysdata**.
 1. Finaliser la communication front/back.
 2. Optimiser la validation des critères.
 3. Améliorer les tests pour garantir
-
